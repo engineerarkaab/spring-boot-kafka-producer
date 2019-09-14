@@ -17,7 +17,7 @@ public class UserController {
 	@Autowired
 	private KafkaTemplate<String, User> kafkaTemplate;
 	
-	private static final String TOPIC="Kafka_Example.";
+	private static final String TOPIC="Kafka_Json_Test";
 	
 	@GetMapping("/message/{username}")
 	private String getUser(@PathVariable String username, @RequestBody User user)

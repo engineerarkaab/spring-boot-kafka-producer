@@ -2,19 +2,23 @@ package kafka.producer.demo.model;
 
 import java.io.Serializable;
 
-import lombok.Getter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
-@ToString
 public class User implements Serializable{
-	
-	private static final long serialVersionUID = 3309666499752467397L;
-	private String fname;
-	private String lname;
 
+	private static final long serialVersionUID = -4173679614287201785L;
+	
+	@JsonProperty(value="NAME")
+	private String name;
+	@JsonProperty(value="department")
+	private String dept;
+	@JsonProperty("salary")
+	private Long salary;
+	@JsonProperty("addKey")
+	private Address address;
 }
